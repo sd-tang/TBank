@@ -16,6 +16,10 @@ namespace TBank
             account.MakeDeposit(500, DateTime.Now, "Unit rental");
             Console.WriteLine($"\n Your current balance: {account.Balance}");
 
+            //Print Account History
+            Console.WriteLine($"\n\nAccount Summary for {account.Owner}");
+            Console.WriteLine($"\n{account.GetAccountHistory()}");
+
             //Test initial balance must be positive
             BankAccount invalidAccount;
             try

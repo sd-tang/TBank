@@ -64,5 +64,23 @@ namespace TBank
             allTransactions.Add(withdrawal);
 
         }
+
+        //Log all transactions
+        public string GetAccountHistory()
+        {
+            var report = new System.Text.StringBuilder();
+
+            decimal balance = 0;
+            report.AppendLine("Date\t\tAmount\tBalance\tNote");
+            report.AppendLine("========================================================");
+
+            foreach (var item in allTransactions)
+            {
+                balance += item.TxAmount;
+                report.AppendLine($"{item.TxDate.ToShortDateString()}\t{item.TxAmount}\t{balance}\t{item.TxNotes}");
+            }
+
+            return report.ToString();
+        }
     }
 }
