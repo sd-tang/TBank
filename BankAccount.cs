@@ -65,6 +65,9 @@ namespace TBank
 
         }
 
+        //Virtual method
+        public virtual void PerformMonthEndTransaction() { }
+
         //Log all transactions
         public string GetAccountHistory()
         {
