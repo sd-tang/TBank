@@ -8,7 +8,7 @@ namespace TBank
 {
     public class OnlineSaverAccount : BankAccount
     {
-        //Constructor
+        // Constructor
         public OnlineSaverAccount(string name, decimal initialBalance) : base(name, initialBalance)
         {
 
@@ -19,7 +19,7 @@ namespace TBank
             if (Balance > 500m) //m means decimal, m for money
             {
                 decimal interest = Balance * 0.02m;
-                MakeDeposit(interest, DateTime.Now, "Monthly interest");
+                MakeDeposit(interest, DateTime.Now, "Monthly deposit");
             }
         }
     }

@@ -8,7 +8,7 @@ namespace TBank
 {
     public class LineOfCreditAccount : BankAccount
     {
-        //Constructor
+        // Constructor
         public LineOfCreditAccount(string name, decimal initialBalance) : base(name, initialBalance)
         {
 

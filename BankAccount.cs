@@ -8,7 +8,7 @@ namespace TBank
 {
     public class BankAccount
     {
-        //Define BankAccount attributes
+        // Define BankAccount attributes
         private static int accountNumberSeed = 1234509876;
         public string Number { get; }
         public string Owner { get; set; }
@@ -25,7 +25,7 @@ namespace TBank
             }
         }
 
-        //Define constructor to initialize this object
+        // Define constructor to initialize this object
         public BankAccount(string name, decimal initialBalance)
         {
             this.Owner = name;
@@ -36,7 +36,7 @@ namespace TBank
 
         private List<Transaction> allTransactions = new List<Transaction>();
 
-        //Define actions/methods for BankAccount object
+        // Define actions/methods for BankAccount object
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
             if (amount <= 0)
@@ -65,22 +65,22 @@ namespace TBank
 
         }
 
-        //Virtual method
+        // Virtual method
         public virtual void PerformMonthEndTransaction() { }
 
-        //Log all transactions
+        // Log all transactions
         public string GetAccountHistory()
         {
             var report = new System.Text.StringBuilder();
 
             decimal balance = 0;
-            report.AppendLine("Date\t\tAmount\tBalance\tNote");
+            report.AppendLine("Date\t\tAmount\t\tBalance\t\tNote");
             report.AppendLine("========================================================");
 
             foreach (var item in allTransactions)
             {
                 balance += item.TxAmount;
-                report.AppendLine($"{item.TxDate.ToShortDateString()}\t{item.TxAmount}\t{balance}\t{item.TxNotes}");
+                report.AppendLine($"{item.TxDate.ToShortDateString()}\t{item.TxAmount}\t\t{balance}\t\t{item.TxNotes}");
             }
 
             return report.ToString();
